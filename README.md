@@ -32,9 +32,11 @@ plot(my.data)
 
 
 # clustering always needs a similarity 
+
 # but Spectral clustering needs a similarity or affinity 
 
 #for exmaple 
+
 #s(x,y) measure determining how close points x and y are from each other. 
 # Let'S denote the Similarity Matrix, S, as the matrix that at S_ij = s(x_i, x_j)
   # gives the similarity between observations  x_i and  x_j
@@ -110,7 +112,7 @@ evL <- eigen(U, symmetric=TRUE)
 Z   <- evL$vectors[,(ncol(evL$vectors)-k+1):ncol(evL$vectors)]
 plot(Z, col=obj$classes, pch=20) # notice that all 50 points, of each cluster, are on top of each other
 
-#now you need stats library 
+# now you need stats library 
 library("stats")
 km <- kmeans(Z, centers=k, nstart=5)
 
